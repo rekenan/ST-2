@@ -30,9 +30,9 @@ TEST(CircleTest, SetRadius) {
 
 TEST(CircleTest, SetFerence) {
     Circle c(5.0);
-    c.setFerence(31.4159);
+    c.setFerence(2 * M_PI * 5.0);
     EXPECT_NEAR(c.getRadius(), 5.0, 0.0001);
-    EXPECT_NEAR(c.getArea(), 78.5398, 0.0001);
+    EXPECT_NEAR(c.getArea(), M_PI * 5.0 * 5.0, 0.0001);
 }
 
 TEST(CircleTest, SetArea) {
@@ -59,7 +59,11 @@ TEST(TaskTest, PoolCostTest) {
 
     double totalCost = calculateCostOfPoolAndPath(poolRadius,
                 pathWidth, concreteCost, fenceCost);
-    EXPECT_NEAR(totalCost, 65973.4457, 0.0001);
+    double expectedConcreteCost = 1000 * M_PI * ((poolRadius + pathWidth) *
+                        (poolRadius + pathWidth) - poolRadius * poolRadius);
+    double expectedFenceCost = 2000 * 2 * M_PI * (poolRadius + pathWidth);
+    double expectedTotalCost = expectedConcreteCost + expectedFenceCost;
+    EXPECT_NEAR(totalCost, expectedTotalCost, 0.0001);
 }
 
 TEST(CircleTest, NegativeRadius) {

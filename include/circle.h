@@ -12,19 +12,19 @@ class Circle {
     double area;
 
     void updateFerence() {
-        ference = 2 * 3.141592653589793 * radius;
+        ference = 2 * M_PI * radius;
     }
 
     void updateArea() {
-        area = 3.141592653589793 * radius * radius;
+        area = M_PI * radius * radius;
     }
 
     void updateRadiusFromFerence() {
-        radius = ference / (2 * 3.141592653589793);
+        radius = ference / (2 * M_PI);
     }
 
     void updateRadiusFromArea() {
-        radius = std::sqrt(area / 3.141592653589793);
+        radius = std::sqrt(area / M_PI);
     }
 
  public:
