@@ -3,9 +3,10 @@
 #ifndef INCLUDE_CIRCLE_H_
 #define INCLUDE_CIRCLE_H_
 #include <cstdint>
+#include <cmath>
 
 class Circle {
-private:
+ private:
     double radius;
     double ference;
     double area;
@@ -26,8 +27,8 @@ private:
         radius = std::sqrt(area / 3.141592653589793);
     }
 
-public:
-    Circle(double r) : radius(r) {
+ public:
+    explicit Circle(double r) : radius(r) {
         updateFerence();
         updateArea();
     }

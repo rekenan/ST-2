@@ -12,7 +12,10 @@ double calculateGapAfterRope(double earthRadius, double ropeIncrease) {
 }
 
 // Бассейн
-double calculateCostOfPoolAndPath(double poolRadius, double pathWidth, double concreteCostPerSqMeter, double fenceCostPerMeter) {
+double calculateCostOfPoolAndPath(double poolRadius, 
+                                  double pathWidth, 
+                                  double concreteCostPerSqMeter, 
+                                  double fenceCostPerMeter) {
     Circle pool(poolRadius);
     Circle totalArea(poolRadius + pathWidth);
 
