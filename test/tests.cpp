@@ -46,7 +46,7 @@ TEST(CircleTest, SetArea) {
 TEST(TaskTest, RopeGapTest) {
     double earthRadius = 6378.1;
     double ropeIncrease = 1.0;
-    EXPECT_NEAR(calculateGapAfterRope(earthRadius, ropeIncrease), 
+    EXPECT_NEAR(calculateGapAfterRope(earthRadius, ropeIncrease),
                 0.1592, 0.0001);
 }
 
@@ -79,7 +79,7 @@ TEST(TaskTest, ZeroPathWidth) {
     double concreteCost = 1000.0;
     double fenceCost = 2000.0;
 
-    double totalCost = calculateCostOfPoolAndPath(poolRadius, 
+    double totalCost = calculateCostOfPoolAndPath(poolRadius,
                 pathWidth, concreteCost, fenceCost);
     EXPECT_NEAR(totalCost, 37699.1118, 0.0001);
 }
